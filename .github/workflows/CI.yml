@@ -16,5 +16,8 @@ jobs:
 
       - uses: actions/checkout@v2
 
+      - name: npm install, build
+        run: make install
+
       - name: Run Makefile
         run: make lint
