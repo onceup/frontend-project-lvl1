@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
+
+      - uses: actions/checkout@v2
+
       -name: Install
         run: make install
+
       - name: Run Makefile
         run: make lint
