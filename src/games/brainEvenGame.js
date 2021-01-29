@@ -14,9 +14,7 @@ export default () => {
     const userAnswer = readlineSync.question('Answer: ');
     const correctAnswer = isEven(num) ? 'yes' : 'no';
     if (userAnswer !== correctAnswer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log("Let's try again, Bill!");
       return;
     }
