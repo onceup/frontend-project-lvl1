@@ -4,3 +4,5 @@
 [![Node CI](https://github.com/onceup/frontend-project-lvl1/workflows/CI/badge.svg)](https://github.com/onceup/frontend-project-lvl1/actions)
 
 [![asciicast](https://asciinema.org/a/BWfuuVT5RFMnmCzuva3oJz4PO.svg)](https://asciinema.org/a/BWfuuVT5RFMnmCzuva3oJz4PO)
+
+[![asciicast](https://asciinema.org/a/cRkmISJHspfZP07Atals0jxRi.svg)](https://asciinema.org/a/cRkmISJHspfZP07Atals0jxRi)
