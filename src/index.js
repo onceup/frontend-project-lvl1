@@ -22,5 +22,5 @@ export default (description, getGameParams) => {
     }
     console.log('Correct!');
   }
-  console.log(`Congratulation ${userName}`);
+  console.log(`Congratulation, ${userName}`);
 };
