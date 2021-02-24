@@ -2,36 +2,25 @@ import { cons } from '@hexlet/pairs';
 import randomInt from '../utils/randomInt.js';
 import playGame from '../index.js';
 
-const minProgr = 5;
-const maxProgr = 20;
-const minD = 1;
-const maxD = 50;
-const maxStart = 100;
-
+export const maxFirstElement = 20;
+export const amount = 10;
+export const maxStep = 5;
+export const minStep = 2;
 const description = 'What number is missing in the progression?';
-
-const getGameParams = () => {
-  const progrLen = randomInt(minProgr, maxProgr);
-  const hiddenIndex = randomInt(0, progrLen);
-  const d = randomInt(minD, maxD);
-  const startNum = randomInt(1, maxStart);
-  const question = [startNum];
-  let lastNum = startNum;
-  let correctAnswer;
-  for (let i = 0; i < progrLen - 1; i += 1) {
-    if (i === hiddenIndex) {
-      correctAnswer = lastNum + d;
-      question.push('..');
+const getQuestionAndCorrectAnswer = () => {
+  const firstElement = randomInt(1, maxFirstElement);
+  const hiddenElementPosition = randomInt(0, amount - 1);
+  const step = randomInt(minStep, maxStep);
+  const correctAnswer = firstElement + hiddenElementPosition * step;
+  let question = '';
+  for (let i = 0; i < amount; i += 1) {
+    if (i === hiddenElementPosition) {
+      question = `${question}.. `;
     } else {
-      question.push(lastNum + d);
+      question = `${question}${i * step + firstElement} `;
     }
-    lastNum += d;
   }
-  const gameParams = cons(question.join(' '), String(correctAnswer));
-
-  return (description, gameParams);
+  return cons(question.trim(), String(correctAnswer));
 };
 
-export default () => {
-  playGame(description, getGameParams);
-};
+export default () => playGame(description, getQuestionAndCorrectAnswer);
