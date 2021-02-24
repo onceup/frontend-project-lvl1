@@ -27,7 +27,7 @@ const getGameParams = () => {
     }
     lastNum += d;
   }
-  const gameParams = cons(question, String(correctAnswer));
+  const gameParams = cons(question.join(' '), String(correctAnswer));
 
   return (description, gameParams);
 };
